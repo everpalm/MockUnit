@@ -3,12 +3,12 @@ pipeline {
         label 'test_mock_unit'
     }
     stages {
-        stage('Checkout') {
-            steps {
-                // 检出代码
-                git 'https://github.com/everpalm/MockUnit.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         // 检出代码
+        //         git 'https://github.com/everpalm/MockUnit.git'
+        //     }
+        // }
         stage('Build Docker Image') {
             steps {
                 // 构建 Docker 镜像
