@@ -11,4 +11,6 @@ class TestPowerPin:
 
 
 class TestOperatePWR:
-    pass
+    def test_press_power_button(self, pwr_operation):
+        # pwr_operation.press_power_button()
+        pass
