@@ -19,7 +19,8 @@ pipeline {
             steps {
                 // 运行 Docker 容器并执行测试
                 sh '''
-                    docker run -it --name mock_unit_container --privileged -d mock_unit
+                    // docker run -it --name mock_unit_container --privileged -d mock_unit
+                    docker run -it mock_unit
                 '''
             }
         }
