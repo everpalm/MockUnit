@@ -1,5 +1,9 @@
+import logging
 import pytest
 from my_suite.my_case import MyClass
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s'
+                    '%(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 
 @pytest.fixture(scope='module')
