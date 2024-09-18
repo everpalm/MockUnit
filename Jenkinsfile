@@ -9,7 +9,6 @@ pipeline {
         //         git 'https://github.com/everpalm/MockUnit.git'
         //     }
         // }
-        // docker run -it --name mock_unit_container --privileged -d mock_unit
         stage('Build Docker Image') {
             steps {
                 // 构建 Docker 镜像
@@ -20,7 +19,7 @@ pipeline {
             steps {
                 // 运行 Docker 容器并执行测试
                 sh '''
-                    docker run -it mock_unit
+                    docker run -it --name mock_unit_container --privileged -d mock_unit
                 '''
             }
         }
