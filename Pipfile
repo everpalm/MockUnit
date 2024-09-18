@@ -13,6 +13,7 @@ pytest-rerunfailures = "*"
 pytest-dependency = "*"
 requests = "*"
 pytest-cov = "*"
+"rpi.gpio" = "*"
 
 [dev-packages]
 

@@ -1,6 +1,7 @@
 .report.json
 .coverage*
-log/
+logs/
 .pytest_cache
 logs/test.log
 *.pyc
+*/__pycache__
