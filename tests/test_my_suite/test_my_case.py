@@ -21,7 +21,7 @@ class TestMyClass:
                           ' quas totam\nnostrum rerum est autem sunt rem'
                           ' eveniet architecto'}
 
-    def test_fetch_data_failure(self, my_class_instance, mock_requests_get):
+    def test_fetch_data_failure(self, my_class_instance):
         # 呼叫 fetch_data 方法
         result = my_class_instance.fetch_data('http://example.com')
 
