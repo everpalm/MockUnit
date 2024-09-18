@@ -3,12 +3,6 @@ pipeline {
         label 'test_mock_unit'
     }
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         // 检出代码
-        //         git 'https://github.com/everpalm/MockUnit.git'
-        //     }
-        // }
         stage('Build Docker Image') {
             steps {
                 // 构建 Docker 镜像
@@ -19,7 +13,7 @@ pipeline {
             steps {
                 // 运行 Docker 容器并执行测试
                 sh '''
-                    docker run --name mock_unit_container --privileged mock_unit
+                    docker run --name mock_unit_container --privileged -v /dev/mem:/dev/mem mock_unit
                 '''
             }
         }
