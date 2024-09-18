@@ -16,7 +16,7 @@ class TestMyClass:
         mock_response.json.return_value = {'key': 'value'}
         logger.debug('mock_response.json.return_value ='
                      f' {mock_response.json.return_value}')
-        
+
         # 呼叫 fetch_data 方法
         result = my_class_instance.fetch_data('http://example.com')
 
@@ -30,7 +30,7 @@ class TestMyClass:
         # 設置 mock 返回的響應
         mock_response = mock_requests_get.return_value
         mock_response.status_code = 404  # 模擬一個失敗的響應
-        
+
         # 呼叫 fetch_data 方法
         result = my_class_instance.fetch_data('http://example.com')
 
