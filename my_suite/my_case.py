@@ -1,6 +1,9 @@
 # my_module.py
+import logging
 import requests
 from requests.exceptions import RequestException, JSONDecodeError
+
+logger = logging.getLogger(__name__)
 
 
 class MyClass:
@@ -13,7 +16,7 @@ class MyClass:
                 try:
                     return response.json()  # 返回 JSON 數據
                 except JSONDecodeError:
-                    print("Response is not a valid JSON")
+                    logger.debug("Response is not a valid JSON")
                     return None
             else:
                 print(f"Error: Received status code {response.status_code}")
