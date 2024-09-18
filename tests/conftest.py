@@ -1,5 +1,5 @@
 import pytest
-from my_suite.my_module import MyClass
+from my_suite.my_case import MyClass
 
 
 @pytest.fixture(scope='module')
@@ -10,5 +10,5 @@ def my_class_instance():
 
 @pytest.fixture
 def mock_requests_get(mocker):
-    # 正確地模擬 my_module 中的 requests.get 方法
-    return mocker.patch('my_suite.my_module.requests.get')
+    # 正確地模擬 my_case 中的 requests.get 方法
+    return mocker.patch('my_suite.my_case.requests.get')
