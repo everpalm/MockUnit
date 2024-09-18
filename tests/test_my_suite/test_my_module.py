@@ -1,21 +1,7 @@
 # test_my_module.py
 import logging
-import pytest
-from my_suite.my_module import MyClass
 
 logger = logging.getLogger(__name__)
-
-
-@pytest.fixture(scope='module')
-def my_class_instance():
-    # 創建並返回 MyClass 的實例
-    return MyClass()
-
-
-@pytest.fixture
-def mock_requests_get(mocker):
-    # 正確地模擬 my_module 中的 requests.get 方法
-    return mocker.patch('my_suite.my_module.requests.get')
 
 
 class TestMyClass:
@@ -51,4 +37,5 @@ class TestMyClass:
         # 驗證 fetch_data 返回 None
         assert result is None
         # 驗證 requests.get 方法被正確呼叫一次
-        mock_requests_get.assert_called_once_with('http://example.com', timeout=5)
+        mock_requests_get.assert_called_once_with('http://example.com',
+                                                  timeout=5)

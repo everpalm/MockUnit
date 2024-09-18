@@ -7,7 +7,6 @@ class MyClass:
     def fetch_data(self, url):
         try:
             response = requests.get(url, timeout=5)
-            print('this is a test')
 
             # 檢查響應是否為 JSON 格式
             if response.status_code == 200:
