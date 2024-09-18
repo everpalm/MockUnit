@@ -2,3 +2,4 @@
 .coverage*
 log/
 .pytest_cache
+logs/test.log
