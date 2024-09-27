@@ -5,8 +5,19 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                // 构建 Docker 镜像
-                sh 'docker build -t mock_unit .'
+                script {
+                    try {
+                        withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                            sh('echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin')
+                            sh """
+                            docker build -t mock_unit .
+                            """
+                        }
+                    } catch (e) {
+                        echo "An error occurred during the docker-build process: ${e.getMessage()}"
+                        currentBuild.result = 'FAILURE'
+                    }
+                }
             }
         }
         stage('Run Tests in Docker Container') {
