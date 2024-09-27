@@ -22,7 +22,7 @@ class TestMyClass:
 
         # 驗證 fetch_data 返回正確的結果
         assert result == {'key': 'value'}
-        assert result.status_code == 200
+
         # 驗證 requests.get 方法被正確呼叫一次
         mock_requests_get.assert_called_once_with('http://example.com',
                                                   timeout=5)
