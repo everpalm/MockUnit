@@ -1,7 +1,7 @@
 import pytest
-import RPi.GPIO as gpio
+# import RPi.GPIO as gpio
 from rasperberry.gpio import PowerPin
-from rasperberry.gpio import OperatePWR
+# from rasperberry.gpio import OperatePWR
 
 
 @pytest.fixture
